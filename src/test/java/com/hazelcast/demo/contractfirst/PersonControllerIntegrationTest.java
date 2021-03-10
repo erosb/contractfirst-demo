@@ -15,7 +15,7 @@ public class PersonControllerIntegrationTest {
     @Test
     public void testCreatePerson() {
         given().port(port)
-//                .filter(new OpenApiValidationFilter("/person-api.yaml"))
+                .filter(new OpenApiValidationFilter("/person-api.yaml"))
                 .contentType("application/json")
                 .when().body("{\"userName\":\"John Doe\", \"age\":20, \"emails\":[]}")
                 .post("/person")

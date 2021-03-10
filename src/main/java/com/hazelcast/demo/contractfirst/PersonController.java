@@ -12,7 +12,7 @@ public class PersonController {
     
     private Map<String, PersonModel> storage = new ConcurrentHashMap<>();
     
-    @PostMapping("/person")
+    @PostMapping("/persons")
     public void create(@RequestBody PersonModel person) {
         storage.put(person.getUserName(), person);
     }
