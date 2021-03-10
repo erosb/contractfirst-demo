@@ -1,0 +1,35 @@
+openapi: '3.0.2'
+info:
+  title: 'Person API for testing with RestAssured and OpenAPI4J'
+  version: '1.0'
+paths: 
+  /person:
+    post:
+      requestBody: 
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Person'
+      responses: 
+        200:
+          description: success
+components:
+  schemas:
+    Person:
+      type: object
+      properties:
+        name:
+          type: string
+        age:
+          type: integer
+          minimum: 0
+        emails:
+          type: array
+          items:
+            type: string
+          minLength: 1
+      required:
+        - name
+        - age
+        - emails
+      additionalProperties: false
