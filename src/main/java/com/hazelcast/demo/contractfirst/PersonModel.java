@@ -8,5 +8,5 @@ import java.util.List;
 public class PersonModel {
     private String userName;
     private int age;
-    private List<String> emails;
+    private String emails;
 }

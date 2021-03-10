@@ -17,7 +17,7 @@ public class PersonControllerIntegrationTest {
         given().port(port)
                 .filter(new OpenApiValidationFilter("/person-api.yaml"))
                 .contentType("application/json")
-                .when().body("{\"userName\":\"John Doe\", \"age\":20, \"emails\":[]}")
+                .when().body("{\"userName\":\"John Doe\", \"age\":20, \"emails\":\"johndoe@example.com\"}")
                 .post("/person")
                 .then().statusCode(200)
                 ;
